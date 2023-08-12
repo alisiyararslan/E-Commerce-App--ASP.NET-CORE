@@ -1,0 +1,166 @@
+﻿@using EntityLayer.DTOs
+@using Newtonsoft.Json;
+@model AddItemDTO
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "AddItem";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    var selectedCategory = 0;
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+@*<script>
+    function setCategory() {
+        var id = $('categoryDropDown').val();
+        console.log('id', id)
+    @selectedCategory = id;
+    }
+</script>*@
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-11">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Add Item</h4>
+                <form class="form" method="post" action="/Item/AddItem">
+                    <div class="row">
+                       
+                        @{
+                            var id = int.Parse(Context.Request.Cookies["UserID"]);
+                        }
+                        <input hidden value="@id" name="UserId" />
+                        <div class="col-md-3 form-group">
+                            <label>Title</label>
+                            <input class="form-control" type="text" name="Title" required>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label>Brand</label>
+                            <input class="form-control" type="text" name="Brand" required>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label>Price</label>
+                            <input class="form-control" type="text" name="Price" required>
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            <label>Discount</label>
+                            <input class="form-control" type="text" name="Discount" placeholder="%" required min="0" max="100">
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            <label>Image</label>
+                            <input class="form-control" type="text" name="Image" placeholder="Enter Img URL" required>
+                        </div>
+                        
+                        <div class="col-md-3 form-group">
+                            @{
+                                var httpClient = new HttpClient();
+                                var response = await httpClient.GetAsync(apiUrl + "Categories");
+                                var content = await response.Content.ReadAsStringAsync();
+                                List<GetCategoryDTO> categorylist = JsonConvert.DeserializeObject<List<GetCategoryDTO>>(content);
+                                categorylist.Sort((a, b) => string.Compare(a.Name, b.Name)); // Verileri "Name" özelliğine göre sırala
+                            }
+                            
+                            <label>Category</label>
+                            <select class="form-control" name="CategoryId" id="categoryDropdown" required>
+                                
+                                <option value="" disabled selected style="font-style:italic">Choose</option>
+                                @foreach (var item in categorylist)
+                                {
+                                  <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                     
+                        <div class="col-md-3 form-group">
+                           
+                            <label>SubCategory</label>
+                            <select id="subcategoryDropdown" class="form-control" name="SubCategoryId" required>
+                              
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                          
+                            <label>Category Detail</label>
+                            <select id="subcategoryDetailDropdown" class="form-control" name="CategoryDetailId" required>
+                              
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                            <label>Description</label>
+                            <textarea class="form-control " name="Description" required  style="height:250px"></textarea>
+                        </div>
+
+                       <br />
+                        <div class="col-md-3 form-group">
+                            <div class="card-footer border-secondary bg-transparent">
+                                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Add Item</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    
+<script>
+        var apiUrl = "@Html.Raw(apiUrl)";
+        jQuery(document).ready(function () {
+            $("#categoryDropdown").change(function () {
+                var selectedCategoryId = $(this).val();
+                console.log('selectedCategoryId', selectedCategoryId)
+                $.ajax({
+                    url: apiUrl + "SubCategories/categoryId/" + selectedCategoryId,
+                    type: "GET",
+                  //  data: { categoryId: selectedCategoryId },
+                    success: function (response) {
+                        
+                        var subCategoryDropdown = $("#subcategoryDropdown");
+                        subCategoryDropdown.empty();
+                        subCategoryDropdown.append($('<option></option>').val('').text('Choose').prop('disabled', true).prop('selected', true).css('font-style', 'italic'));
+
+                        $.each(response, function (index, subCategory) {
+                            subCategoryDropdown.append($('<option></option>').val(subCategory.id).text(subCategory.name));
+                        });
+                    },
+                    error: function () {
+                        console.log("Ajax isteği sırasında bir hata oluştu.");
+                    }
+                });
+            });
+
+            $("#subcategoryDropdown").change(function () {
+                var selectedSubCategoryId = $(this).val();
+                console.log('subcategoryId',selectedSubCategoryId)
+                $.ajax({
+                    url: apiUrl + "CategoryDetails/subCategoryId/" + selectedSubCategoryId,
+                    type: "GET",
+                    //  data: { categoryId: selectedCategoryId },
+                    success: function (response) {
+
+                        var subcategoryDetailDropdown = $("#subcategoryDetailDropdown");
+                        subcategoryDetailDropdown.empty();
+                        subcategoryDetailDropdown.append($('<option></option>').val('').text('Choose').prop('disabled', true).prop('selected', true).css('font-style', 'italic'));
+
+                        $.each(response, function (index, subCategoryDetail) {
+                            subcategoryDetailDropdown.append($('<option></option>').val(subCategoryDetail.id).text(subCategoryDetail.name));
+                        });
+                    },
+                    error: function () {
+                        console.log("Ajax isteği sırasında bir hata oluştu.");
+                    }
+                });
+
+
+               
+            });
+        })
+
+        
+
+</script>

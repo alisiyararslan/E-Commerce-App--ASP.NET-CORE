@@ -1,0 +1,67 @@
+﻿@model EntityLayer.DTOs.RegisterDTO
+
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Register</h4>
+                <form class="form" method="post">
+                    <div class="row">
+
+                        <div class="col-md-6 form-group">
+                            <label>First Name</label>
+                            <input class="form-control" type="text" placeholder="Name" name="Name" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Last Name</label>
+                            <input class="form-control" type="text" placeholder="Surname" name="Surname" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" type="text" placeholder="example@email.com" name="Email" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Mobile No</label>
+                            <input class="form-control" type="text" placeholder="Phone No (10 digits)" name="PhoneNumber" required pattern="\d{10}" minlenth="10" maxlength="10">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Username</label>
+                            <input class="form-control" type="text" placeholder="Username (Only English Characters)" name="UserName" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" placeholder="Password (8-16 characters)" name="Password" required minlength="8" maxlength="16">
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label>Birth date</label>
+                            <input class="form-control" type="date" name="BirthDate" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Gender</label>
+                            <div class="gender-option">
+                                <div class="gender">
+                                    <input type="radio" id="check-male" name="Gender" value="true" checked />
+                                    <label for="check-male">Male</label>
+                                </div>
+                                <div class="gender">
+                                    <input type="radio" id="check-female" name="Gender" value="false" />
+                                    <label for="check-female">Female</label>
+                                </div>
+                            </div>
+
+                            <div class="card-footer border-secondary bg-transparent">
+                                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Create account</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>

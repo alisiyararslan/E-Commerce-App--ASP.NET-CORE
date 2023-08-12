@@ -1,0 +1,170 @@
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\huseyinkaradana\Desktop\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\huseyinkaradana\Desktop\emir1.0.0.9\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.1.2 Emir\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\huseyinkaradana\Desktop\Yeni klasör\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\huseyinkaradana\Desktop\version1.0.2.4\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\huseyinkaradana\Desktop\version 1.0.2.8\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\dogal\source\repos\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll

@@ -1,0 +1,40 @@
+﻿@model EntityLayer.DTOs.LoginDTO
+
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class=" pt-5 ">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 20em">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Enter Login</span></h2>
+            <br>
+
+        </div>
+
+
+        <form class="form" method="post" style="width: 30em;">
+
+            <div class="control-group">
+                <input type="email" class="form-control" placeholder="Your Email"
+                       required="required" data-validation-required-message="Please enter your email" name="Email" />
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group">
+                <input type="password" class="form-control" placeholder="Password"
+                       required="required" data-validation-required-message="Please enter a password" name="Password" />
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="navbar-nav float-lg-right py-0">
+
+                <a href="/Session/SendResetMail/" class="" style="color:black">Forgot my password</a>
+            </div>
+
+
+            <div>
+                <button class="btn btn-primary py-2 px-4" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+</div>

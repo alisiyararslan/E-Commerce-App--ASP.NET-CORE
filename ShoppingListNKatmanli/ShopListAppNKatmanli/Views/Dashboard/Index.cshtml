@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete;
+@using Newtonsoft.Json;
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+
+<div class="row pb-3">
+    @{
+        var id = int.Parse(Context.Request.Cookies["UserID"]);
+        var httpClient = new HttpClient();
+        var responseUser = await httpClient.GetAsync(apiUrl + "Users/getUserById?id=" + id);
+        var contentUser = await responseUser.Content.ReadAsStringAsync();
+        User user = JsonConvert.DeserializeObject<User>(contentUser);
+    }
+ 
+    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+        <div class="card product-item border-0 mb-4">
+            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <img class="img-fluid w-100" src="@user.ProfilePhoto" alt="User Profile Photo">
+            </div>
+            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 class="text-truncate mb-3">@user.Name @user.Surname</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-12 col-sm-12 pb-1">
+        <div class="card product-item border-0 mb-5">
+            <h5>Email</h5>
+            <p class="mb-4">@user.Email</p>
+            <h5>Username</h5>
+            <p class="mb-4">@user.UserName</p>
+            <h5>Phone Number</h5>
+            <p class="mb-4">@user.PhoneNumber</p>
+            <h5>Gender</h5>
+            <p class="mb-4">@if (user.Gender)
+                {
+                    <p>Male</p>
+                }
+                else
+                {
+                    <p>Female</p>
+                }
+            </p>
+        </div>
+        <a href="/Dashboard/GetUserData" class="btn btn-info">Edit Profile</a>
+    </div>
+   
+
+
+</div>

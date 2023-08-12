@@ -1,0 +1,125 @@
+﻿@using EntityLayer.Concrete;
+@using EntityLayer.DTOs
+@using Newtonsoft.Json;
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<GetOrderDTO>
+@inject IConfiguration _configuration
+
+
+
+@{
+    ViewData["Title"] = "Orders";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Main</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created Date</th>
+            <th scope="col">Total Price</th>
+            <th scope="col">Share Code</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <th scope="row">@item.Id</th>
+                @{
+                    var httpClient = new HttpClient();
+                    var userId = Context.Request.Cookies["UserID"];
+                    var response = await httpClient.GetAsync(apiUrl + "Orders/getMainOrder?userId=" + userId);
+                    var content = await response.Content.ReadAsStringAsync();
+                    Order mainOrder = JsonConvert.DeserializeObject<Order>(content);
+
+                    if(mainOrder == null)
+                    {
+                        <td><a href="/Dashboard/SelectMainOrder/@item.Id" class="btn" style="background-color: deepskyblue;">Select Main</a></td>
+                    }
+
+                    else
+                    {
+                        if (mainOrder.Id == item.Id)
+                        {
+                            <td class="align-middle"><img src="/img/check.png" alt="" style="width: 50px;"></td>
+                        }
+                        else
+                        {
+                            <td><a href="/Dashboard/SelectMainOrder/@item.Id" class="btn" style="background-color: deepskyblue;">Select Main</a></td>
+                        }
+                    }
+
+                }
+                <td>@item.Status</td>
+                <td>@item.CreatedDate</td>
+                @{
+                    var httpClient2 = new HttpClient();
+                    var response2 = await httpClient2.GetAsync(apiUrl + "Orders/getOrderWithShareCode?shareCode=" + item.ShareCode);
+                    var content2 = await response2.Content.ReadAsStringAsync();
+                    Order order = JsonConvert.DeserializeObject<Order>(content2);
+
+                    var responseOrderDetails = await httpClient.GetAsync(apiUrl + "OrderDetails/orderId/" + item.Id);
+                    var contentOrderDetails = await responseOrderDetails.Content.ReadAsStringAsync();
+                    List<GetOrderDetailDTO> orderDetailList = JsonConvert.DeserializeObject<List<GetOrderDetailDTO>>(contentOrderDetails);
+
+                    foreach (var orderDetail in orderDetailList)
+                    {
+                        var responseItem = await httpClient.GetAsync(apiUrl + "Items/getById?id=" + orderDetail.ItemId);
+                        var contentItem = await responseItem.Content.ReadAsStringAsync();
+                        Item itemOrderDetail = JsonConvert.DeserializeObject<Item>(contentItem);
+
+                        var responseUser = await httpClient.GetAsync(apiUrl + "Users/getUserById?id=" + itemOrderDetail.UserId);
+                        var contentUser = await responseUser.Content.ReadAsStringAsync();
+                        User user = JsonConvert.DeserializeObject<User>(contentUser);
+
+                        if (!user.IsActive)
+                        {
+                            item.TotalPrice -= orderDetail.LineTotal;
+                        }
+                    }
+                    <td class="numberWithCommas">@item.TotalPrice TL</td>
+                    <td>@item.ShareCode</td>
+                    <td>
+
+                        <a href="/Cart/Index?shareCode=@item.ShareCode" class="btn" style="background-color: #58f13a;">Details</a> -
+                        <a href="/Dashboard/GetOrder/@item.Id" class="btn btn-primary">Update</a> -
+                        <a href="/Dashboard/DeleteOrder/@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                    }
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Orders",new {page}))
+<a type="button" style="background-color:orange;color: #fff;" class="btn" href="/Dashboard/AddOrder">
+    New Basket
+</a>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        function numberWithCommas(price) {
+            price = price.toString().replace(".", ',');
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        $(".numberWithCommas").each(function () {
+            var originalPrice = $(this).text();
+            var formattedPrice = numberWithCommas(originalPrice);
+            $(this).text(formattedPrice);
+        });
+    });
+</script>
+
+

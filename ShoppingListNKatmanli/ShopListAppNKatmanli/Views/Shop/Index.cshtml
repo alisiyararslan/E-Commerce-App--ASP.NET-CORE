@@ -1,0 +1,230 @@
+﻿@using EntityLayer.DTOs
+@using System.Net.Http;
+@using Newtonsoft.Json;
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<GetItemDTO>
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+    decimal discountedPrice = 0;
+}
+
+<!-- Shop Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <!-- Shop Sidebar Start -->
+        <div class="col-lg-3 col-md-12">
+            <!-- Filters Start -->
+            <div class="border-bottom mb-4 pb-4">
+                @*Price Filter*@
+                <h5 class="font-weight-semi-bold mb-4">Filter by price</h5>
+                <form id="price-form" method="get">
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" name="price" value="all" id="price-all">
+                        <label class="custom-control-label" for="price-all">All Price</label>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" name="price" value="1" id="price-1">
+                        <label class="custom-control-label" for="price-1">₺0 - ₺2.000</label>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" name="price" value="2" id="price-2">
+                        <label class="custom-control-label" for="price-2">₺2.000 - ₺5.000</label>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" name="price" value="3" id="price-3">
+                        <label class="custom-control-label" for="price-3">₺5.000 - ₺10.000</label>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" name="price" value="4" id="price-4">
+                        <label class="custom-control-label" for="price-4">₺10.000 - ₺20.000</label>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                        <input type="checkbox" class="custom-control-input" name="price" value="5" id="price-5">
+                        <label class="custom-control-label" for="price-5">₺20.000+</label>
+                    </div>
+                    <br />
+                    <br />
+
+                    @*//SubCategory Filter*@
+                    <h5 class="font-weight-semi-bold mb-4">Filter by Subcategory</h5>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" name="subCategory" value="all" id="subCategory-all">
+                        <label class="custom-control-label" for="subCategory-all">All Subcategories</label>
+                    </div>
+                    @{
+                        var httpClient = new HttpClient();
+                        var response = await httpClient.GetAsync(apiUrl + "SubCategories");
+                        var content = await response.Content.ReadAsStringAsync();
+
+                        List<GetSubCategoryDTO> subCategoryList = JsonConvert.DeserializeObject<List<GetSubCategoryDTO>>(content);
+                        foreach (var subCategory in subCategoryList)
+                        {
+                            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                <input type="checkbox" class="custom-control-input" name="subCategory" value="@subCategory.Id" id="subCategory-@subCategory.Id">
+                                <label class="custom-control-label" for="subCategory-@subCategory.Id">@subCategory.Name</label>
+                            </div>
+                        }
+
+                    }
+                    <br />
+                    <br />
+
+                    @*//CategoryDetail Filter*@
+                    <h5 class="font-weight-semi-bold mb-4">Filter by Category Detail</h5>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" name="categoryDetail" value="all" id="categoryDetail-all">
+                        <label class="custom-control-label" for="categoryDetail-all">All Category Details</label>
+                    </div>
+                    @{
+                        var httpClient2 = new HttpClient();
+                        var response2 = await httpClient2.GetAsync(apiUrl + "CategoryDetails");
+                        var content2 = await response2.Content.ReadAsStringAsync();
+
+                        List<GetCategoryDetailDTO> categoryDetailList = JsonConvert.DeserializeObject<List<GetCategoryDetailDTO>>(content2);
+                        foreach (var categoryDetail in categoryDetailList)
+                        {
+                            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                <input type="checkbox" class="custom-control-input" name="categoryDetail" value="@categoryDetail.Id" id="categoryDetail-@categoryDetail.Id">
+                                <label class="custom-control-label" for="categoryDetail-@categoryDetail.Id">@categoryDetail.Name</label>
+                            </div>
+                        }
+
+                    }
+                    <br />
+                    <br />
+                    <button type="submit" class="btn btn-primary">Filter</button>
+
+
+                </form>
+            </div>
+            <!-- Filters End -->
+        </div>
+        <!-- Shop Sidebar End -->
+        <!-- Shop Product Start -->
+
+        <div class="col-lg-9 col-md-12">
+            <div class="row pb-3">
+                <div class="col-12 pb-1">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class="input-group">
+                            @*<input type="text" class="form-control" placeholder="Search by name">
+                            <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                            <i class="fa fa-search"></i>
+                            </span>
+                            </div>*@
+                        </div>
+                        <div class="dropdown ml-4">
+                            <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                Sort by
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
+                                <form method="get">
+                                    <button class="dropdown-item" name="sort" value="latest" id="sort-latest">Latest</button>
+                                    <button class="dropdown-item" name="sort" value="popularity" id="sort-popularity">Popularity</button>
+                                    <button class="dropdown-item" name="sort" value="ascending" id="sort-ascending">Price (Ascending)</button>
+                                    <button class="dropdown-item" name="sort" value="descending" id="sort-descending">Price (Descending)</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*Item Carts Section*@
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0" style="height:400px">
+                                <a href="/Shop/GetItemDetail/@item.Id">
+                                    <img class="w-100 " src=@item.Image alt="" style="object-fit:cover">
+                                </a>
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">@item.Title</h6>
+                                <div class="d-flex justify-content-center">
+                                    @{
+                                    discountedPrice = item.Price*(100 - item.Discount)/100; 
+                                    if(item.Discount>0)
+                                    {                                    
+                                    <h6 class="numberWithCommas">@discountedPrice TL</h6>
+                                    <h6 class="text-muted ml-2"><del>@item.Price TL</del></h6>
+                                    }
+                                    else 
+                                    {
+                                    <h6 class="numberWithCommas">@item.Price TL</h6>
+                                    }
+                                    }
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="/Shop/GetItemDetail/@item.Id" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                <a href="/Shop/AddOrderDetail/@item.Id" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                @{
+                                    var httpClient4 = new HttpClient();
+                                    var response4 = await httpClient4.GetAsync(apiUrl + "FavoriteItemUsers");
+                                    if (Context.User.Identity.IsAuthenticated)
+                                    {
+                                        int userId = int.Parse(Context.Request.Cookies["UserID"]);
+
+                                        bool IsFavorite = false;
+
+                                        if (response4.IsSuccessStatusCode)
+                                        {
+                                            var content4 = await response4.Content.ReadAsStringAsync();
+                                            List<GetFavoriteItemUserDTO> favoriteItemUserList = JsonConvert.DeserializeObject<List<GetFavoriteItemUserDTO>>(content4);
+
+                                            List<GetFavoriteItemUserDTO> favoriteItemUsersWithUserId = favoriteItemUserList.Where(
+                                            favoriteItemUser => favoriteItemUser.UserId == userId && favoriteItemUser.ItemId == item.Id).ToList();
+
+
+
+                                            if (favoriteItemUsersWithUserId.Count == 1)
+                                            {
+                                                <a href="/FavoriteItemUser/DeleteFavoriteItemUser?itemId=@item.Id" class="text-right"><i class="fas fa-heart text-body"></i></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="/FavoriteItemUser/AddFavoriteItemUser?itemId=@item.Id" class="text-right"><i class="fas fa-heart text-primary"></i></a>
+                                            }
+
+                                        }
+                                    }
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page, sort = ViewBag.Sorting, search = ViewBag.Searching
+            ,subCategory = ViewBag.SubCategories, categoryDetail = ViewBag.CategoryDetails, price = ViewBag.Prices}))
+        </div>
+        <!-- Shop Product End -->
+    </div>
+</div>
+<!-- Shop End -->
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        function numberWithCommas(price) {
+            price = price.toString().replace(".", ',');
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        $(".numberWithCommas").each(function () {
+            var originalPrice = $(this).text();
+            var formattedPrice = numberWithCommas(originalPrice);
+            $(this).text(formattedPrice);
+        });
+    });
+</script>

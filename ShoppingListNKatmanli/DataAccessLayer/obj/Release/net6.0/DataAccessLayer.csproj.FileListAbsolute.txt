@@ -1,0 +1,17 @@
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Release\net6.0\DataAccessLayer.deps.json
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Release\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Release\net6.0\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Release\net6.0\DataAccessLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Release\net6.0\EntityLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\bin\Release\net6.0\EntityLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\refint\DataAccessLayer.dll
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.pdb
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\moral\OneDrive\Masaüstü\Çalışma\ShoppingListNKatmanli\DataAccessLayer\obj\Release\net6.0\ref\DataAccessLayer.dll

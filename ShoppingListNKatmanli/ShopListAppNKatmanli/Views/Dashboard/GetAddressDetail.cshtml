@@ -1,0 +1,50 @@
+﻿@using EntityLayer.DTOs
+@model GetAddressDTO
+    @{
+        ViewData["Title"] = "Adresses";
+        Layout = "~/Views/Shared/Layout.cshtml";
+    }
+<div class="container-fluid pt-5">
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">@Model.AddressName</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="/Dashboard/Adresses">Addresses</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Addres Details</p>
+            </div>
+        </div>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col-lg-7 mb-5">
+            <div class="contact-form">
+                <div class="col-lg-7 pb-5">
+                    <a href="/Dashboard/Adresses" class=" btn  px-xl-5  " style=" background-color: blanchedalmond;"> <i class="fa fa-angle-left"></i> Addresses Back</a>
+                    <br><br><br>
+                    <h5 class="font-weight-semi-bold">Country Name:</h5>
+                    <p class="mb-4">@Model.CountryName</p>
+                    <br />
+                    <h5 class="font-weight-semi-bold">City Name:</h5>
+                    <p class="mb-4">@Model.CityName</p>
+                    <br />
+                    <h5 class="font-weight-semi-bold">Town Name:</h5>
+                    <p class="mb-4">@Model.TownName</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+            <br><br><br><br>
+            <h5 class="font-weight-semi-bold">District Name:</h5>
+            <p class="mb-4">@Model.DistrictName</p>
+            <br />
+            <h5 class="font-weight-semi-bold">Address Postcode:</h5>
+            <p class="mb-4">@Model.PostCode</p>
+            <br />
+            <h5 class="font-weight-semi-bold">Address Description:</h5>
+            <p class="mb-4">@Model.AddressText</p>
+            <br />
+        </div>
+    </div>
+</div>

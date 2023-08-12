@@ -1,0 +1,100 @@
+﻿@using EntityLayer.DTOs
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<GetItemDTO>
+@inject IConfiguration _configuration
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+    decimal discountedPrice = 0;
+}
+
+
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Img</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Options</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                    foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <th scope="row">@item.Id</th>
+                            <td><img src="@item.Image" width="100"/></td>
+                                <td>@item.Title</td>
+                                @{
+                                    var httpClient = new HttpClient();
+                                    var response2 = await httpClient.GetAsync(apiUrl + "Categories/getNameById/" + @item.CategoryId);
+                                    var content2 = await response2.Content.ReadAsStringAsync();
+                                }
+                            <td>@content2 </td>
+                                
+                            
+                            <td>@item.Brand</td>
+                    @{
+                        discountedPrice = item.Price * (100 - item.Discount) / 100;
+                        if (item.Discount > 0)
+                        {
+                            <td>
+                                <h6 class="text-muted ml-2"><del>@item.Price TL</del></h6>
+                                <h6 class="numberWithCommas">@discountedPrice TL</h6>
+                                            
+                            </td>
+                            //<td class="numberWithCommas">@discountedPrice TL</td>
+                        }
+                        else
+                        {
+                                                        
+                            <td class="numberWithCommas">@item.Price TL</td>
+                        }
+                    }
+                            <td>
+
+                                <a href="/Shop/GetItemDetail/@item.Id" class="btn" style="background-color: #58f13a;">Detail</a>-
+                                    <a href="/Item/GetItem/@item.Id" class="btn btn-primary">Update</a>-
+                                <a href="/Item/DeleteItem/@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                    }
+                </tbody>
+            </table>
+            <br />
+
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+            
+            <a type="button" style="background-color:#4d056e;color: #fff;" class="btn" href="/Item/AddItem">
+                New Items
+            </a>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        function numberWithCommas(price) {
+            price = price.toString().replace(".", ',');
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        $(".numberWithCommas").each(function () {
+            var originalPrice = $(this).text();
+            var formattedPrice = numberWithCommas(originalPrice);
+            $(this).text(formattedPrice);
+        });
+    });
+</script>
+
+       
+

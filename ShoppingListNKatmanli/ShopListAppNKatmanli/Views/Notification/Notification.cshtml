@@ -1,0 +1,88 @@
+﻿@using EntityLayer.DTOs
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<GetReminderDTO>
+
+
+@{
+    ViewData["Title"] = "Remainders";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class=" align-items-center justify-content-center  ">
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Notifications</h1>
+            <div class="d-inline-flex">
+            </div>
+        </div>
+    </div>
+    <div class="row px-xl-5">
+        <!-- Shop Sidebar Start -->
+        <!-- Shop Sidebar End -->
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" style="text-align:center">#</th>
+                        <th scope="col" style="text-align:center">Title</th>
+                        <th scope="col" style="text-align:center">Description</th>
+                        <th scope="col" style="text-align:center">Date</th>
+                        <th scope="col" style="text-align:center">Options</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <th scope="row" width="150px">@item.Id</th>
+                            <td width="450px">@item.Title</td>
+                            <td>@item.Description</td>
+                            <td width="400px">@item.Date</td>
+                            <td style="text-align:center;width:100px">
+
+                                <a href="/Dashboard/DeleteReminder/@item.Id" class="btn btn-danger" >Delete</a>
+                            </td>
+
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+
+
+
+
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Notification",new {page}))
+        </div>
+    </div>
+</div>
+
+@*@section Scripts{
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/signalr/hubs"></script> <!-- Include the generated SignalR hub proxy -->
+    <script>
+        // Connect to the SignalR hub
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/notificationHub") // Use the correct URL for your hub
+            .build();
+
+        connection.on("ReceiveNotification", (message, title) => {
+            // Handle the received notification here
+            // For example, show a toast notification using a library like Toastr
+            toastr.info(message, title);
+        });
+
+        // Start the SignalR connection
+        connection.start()
+            .then(() => console.log("SignalR connection established."))
+            .catch(err => console.error("Error establishing SignalR connection: ", err));
+    </script>
+}*@

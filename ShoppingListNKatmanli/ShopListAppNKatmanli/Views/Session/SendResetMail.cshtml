@@ -1,0 +1,33 @@
+﻿@using EntityLayer.DTOs
+@model SendResetMailDTO
+@{
+    ViewData["Title"] = "SendResetMail";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<br />
+<div class="container">
+
+    <!-- Verification Entry Jumbotron -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron  text-center">
+                <h2>Enter the Mail Addresses</h2>
+                <form method="post" class="form " action="/Session/SendResetMail">
+                    <div class="">
+                        <div class="form-group">
+
+                          
+                            <input class=" form-control" type="text" placeholder="example@gmail.com" name="Email" required>
+
+
+                            <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Send Password Reset Code</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

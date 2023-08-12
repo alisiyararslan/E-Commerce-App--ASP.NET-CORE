@@ -1,0 +1,55 @@
+﻿@using EntityLayer.DTOs
+@model GetAddressDTO
+@{
+    ViewData["Title"] = "GetAddress";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Update Address</h4>
+                <form class="form" method="post" action="/Dashboard/UpdateAddress">
+                    <div class="row">
+                        @Html.HiddenFor(x=>x.Id,new{@class="form-control"})
+                        <div class="col-md-6 form-group">
+                            <label>AddressName</label>
+                            @Html.TextBoxFor(x=>x.AddressName,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>CountryName</label>
+                            @Html.TextBoxFor(x=>x.CountryName,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>CityName</label>
+                            @Html.TextBoxFor(x=>x.CityName,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>TownName</label>
+                            @Html.TextBoxFor(x=>x.TownName,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>DistrictName</label>
+                            @Html.TextBoxFor(x=>x.DistrictName,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>PostCode</label>
+                            @Html.TextBoxFor(x=>x.PostCode,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>AddressText</label>
+                            @Html.TextBoxFor(x=>x.AddressText,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <div class="card-footer border-secondary bg-transparent">
+                                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Update Address</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>

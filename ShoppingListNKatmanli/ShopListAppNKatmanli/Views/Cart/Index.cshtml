@@ -1,0 +1,216 @@
+﻿@using EntityLayer.Concrete;
+@using EntityLayer.DTOs
+@using Newtonsoft.Json;
+@model GetOrderDTO
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+
+<!-- Cart Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8 table-responsive mb-5">
+            <table class="table table-bordered text-center mb-0">
+                <thead class="bg-secondary text-dark">
+                    <tr>
+                        <th>Img</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                    @{
+                        var httpClient = new HttpClient();
+                        var response = await httpClient.GetAsync(apiUrl + "OrderDetails/orderId/" + Model.Id);
+                        var content = await response.Content.ReadAsStringAsync();
+                        List<GetOrderDetailDTO> orderDetailList = JsonConvert.DeserializeObject<List<GetOrderDetailDTO>>(content);
+                        foreach (var orderDetail in orderDetailList)
+                        {
+                            var responseItem = await httpClient.GetAsync(apiUrl + "Items/getById?id=" + orderDetail.ItemId);
+                            var contentItem = await responseItem.Content.ReadAsStringAsync();
+                            Item itemOrderDetail = JsonConvert.DeserializeObject<Item>(contentItem);
+
+                            var responseUser = await httpClient.GetAsync(apiUrl + "Users/getUserById?id=" + itemOrderDetail.UserId);
+                            var contentUser = await responseUser.Content.ReadAsStringAsync();
+                            User user = JsonConvert.DeserializeObject<User>(contentUser);
+
+                            if(user.IsActive)
+                            {
+                                <tr>
+                                    @{
+                                        var httpClient2 = new HttpClient();
+                                        var response2 = await httpClient2.GetAsync(apiUrl + "Items/getById?id=" + orderDetail.ItemId);
+                                        var content2 = await response2.Content.ReadAsStringAsync();
+                                        var item = JsonConvert.DeserializeObject<GetItemDTO>(content2);
+
+                                        <td class="align-middle"><img src="@item.Image" width="50" /></td>
+                                        <td class="align-middle">@item.Title</td>
+                                    }
+                                    <td class="align-middle numberWithCommas">@orderDetail.UnitPrice TL</td>
+                                    <td class="align-middle">
+                                        <div class="input-group quantity mx-auto" style="width: 100px;">
+                                            <div class="input-group-btn">
+                                                @if (orderDetail.Amount == 1)
+                                                {
+                                                    <a href="/Cart/UpdateOrderDetailMinus/@orderDetail.Id" class="btn btn-sm btn-primary btn-minus" style="pointer-events:none">
+                                                        <i class="fa fa-minus"></i>
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="/Cart/UpdateOrderDetailMinus/@orderDetail.Id" class="btn btn-sm btn-primary btn-minus">
+                                                        <i class="fa fa-minus"></i>
+                                                    </a>
+                                                }
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="@orderDetail.Amount" disabled>
+
+                                            <div class="input-group-btn">
+                                                <a href="/Cart/UpdateOrderDetailPlus/@orderDetail.Id" class="btn btn-sm btn-primary btn-plus">
+                                                    <i class="fa fa-plus"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle numberWithCommas">@orderDetail.LineTotal</td>
+                                    <td class="align-middle">
+                                        <a href="/Cart/DeleteOrderDetail/@orderDetail.Id" class="btn btn-sm btn-primary">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                            else
+                            {
+                                Model.TotalPrice -= orderDetail.LineTotal;
+                            }
+
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <form class="mb-5" action="">
+                <div class="input-group">
+                    <input type="text" id="shareCodeInput" class="form-control p-4" placeholder="Share Code">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" onclick="applyShareCode()">Apply Share Code</button>
+                    </div>
+                </div>
+            </form>
+            <div class="card border-secondary mb-5">
+                <div class="card-header bg-secondary border-0">
+                    <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
+                </div>
+
+                <div class="card-body">
+                    <a id="copyLinkButton" class="btn"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" /></svg></a>
+                    &emsp;
+                    <a class="btn whatsapp-share-button" order-status="@Model.Status" order-price="@Model.TotalPrice"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg></a>
+                    <br />
+                    <br />
+                    <div class="d-flex justify-content-between mb-3 pt-1">
+                        <h6 class="font-weight-medium">Share Code:</h6>
+                        <h6 class="font-weight-medium">@Model.ShareCode</h6>
+                    </div>
+                </div>
+                <form class="form" method="post" action="/Cart/SaveCart">
+                    <div class="card-footer border-secondary bg-transparent">
+                        <div class="d-flex justify-content-between mt-2">
+                            <input hidden type="text" name="Id" value="@Model.Id" />
+                            <input hidden type="text" name="Status" value="@Model.Status" />
+                            <h5 class="font-weight-bold">Total</h5>
+                            <h5 class="font-weight-bold numberWithCommas">@Model.TotalPrice TL</h5>
+                        </div>
+                        <button class="btn btn-block btn-primary my-3 py-3">Save the Cart</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cart End -->
+@await Component.InvokeAsync("NToastNotify") @*toast*@
+<script>
+    var apiUrl = "@Html.Raw(apiUrl)";
+    async function applyShareCode() {
+        var shareCode = document.getElementById("shareCodeInput").value;
+        if (shareCode) {
+            var responseOrder = await fetch(apiUrl + "Orders/getOrderIdByShareCode?shareCode=" + encodeURIComponent(shareCode));
+            var contentOrder = await responseOrder.json();
+            var id = parseInt(contentOrder);
+
+            if (!isNaN(id)) {
+                window.location.href = "/Cart/Index?shareCode=" + shareCode;
+            } else {
+                window.location.href = "/Cart/Index?shareCode=" + @Model.ShareCode; //TOAST MESAJI GELECEK
+
+            }
+        } else {
+            window.location.href = "/Cart/Index?shareCode=" + @Model.ShareCode; //TOAST MESAJI GELECEK
+        }
+    }
+
+    var currentPageLink;
+    document.addEventListener("DOMContentLoaded", function () {
+        var copyLinkButton = document.getElementById("copyLinkButton");
+
+        copyLinkButton.addEventListener("click", function () {
+            currentPageLink = window.location.href;
+
+            var tempInput = document.createElement("input");
+            tempInput.value = currentPageLink;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            alert("Sayfa Linki Kopyalandı: " + currentPageLink);
+        });
+    });
+    //whatsapp paylaşma
+    document.addEventListener("DOMContentLoaded", function () {
+        var whatsappShareButtons = document.querySelectorAll(".whatsapp-share-button");
+
+        whatsappShareButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                var orderStatus = button.getAttribute("order-status");
+
+                var orderPrice = button.getAttribute("order-price");
+                currentPageLink = window.location.href;
+                var links = currentPageLink;
+
+                var whatsappMessage = "Hey, take a look at the basket I prepared:\n\n Basket Name:" + orderStatus + "\n Total:" + orderPrice + "\n\n";
+                var encodedMessage = encodeURIComponent(whatsappMessage);
+                var whatsappUrl = "https://wa.me/?text=" + encodedMessage + "%0A" + links;
+
+                window.open(whatsappUrl, "_blank");
+            });
+        });
+    });
+
+        jQuery(document).ready(function () {
+            function numberWithCommas(price) {
+                price = price.toString().replace(".", ',');
+                return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            }
+
+            $(".numberWithCommas").each(function () {
+                var originalPrice = $(this).text();
+                var formattedPrice = numberWithCommas(originalPrice);
+                $(this).text(formattedPrice);
+            });
+        });
+
+</script>

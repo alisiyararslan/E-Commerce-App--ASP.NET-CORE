@@ -1,0 +1,59 @@
+﻿@using EntityLayer.DTOs
+@using Newtonsoft.Json;
+@using System.Security.Claims;
+@model AddOrderDTO
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "AddOrder";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">New Basket</h4>
+                <form class="form" method="post" action="/Dashboard/AddOrder">
+                    <div class="row">
+                        @{
+                            var id = int.Parse(Context.Request.Cookies["UserID"]);
+                        }
+                        <input hidden value="@id" name="UserId" />
+                        <div class="col-md-6 form-group">
+                            <label>Status</label>
+                            <input class="form-control" type="text" name="Status" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Address Name</label>
+                            <div class="col-md-4 form-group">
+
+                                @{
+                                    var httpClient = new HttpClient();
+                                    var response = await httpClient.GetAsync(apiUrl + "Addresses/getAddressesByUserId?userId=" + @id);
+                                    var content = await response.Content.ReadAsStringAsync();
+                                    List<GetAddressDTO> addressList = JsonConvert.DeserializeObject<List<GetAddressDTO>>(content);
+
+                                }
+                                <select id="categoryDropdown" class="form-control" name="AddressId">
+                                    @foreach (var item in addressList)
+                                    {
+                                        <option value="@item.Id">@item.AddressName</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <div class="card-footer border-secondary bg-transparent">
+                            <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Create Basket</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>

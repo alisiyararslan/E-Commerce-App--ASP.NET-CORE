@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete;
+@using EntityLayer.DTOs
+@using Newtonsoft.Json;
+@model ResetPasswordDTO
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "Security";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+<div class="col-lg-9 col-md-12">
+
+    <div class="row pb-3">
+        @{
+            var id = int.Parse(Context.Request.Cookies["UserID"]);
+            var httpClient = new HttpClient();
+            var responseUser = await httpClient.GetAsync(apiUrl + "Users/getUserById?id=" + id);
+            var contentUser = await responseUser.Content.ReadAsStringAsync();
+            User user = JsonConvert.DeserializeObject<User>(contentUser);
+        }
+        <div class="col-lg-9 col-md-6 col-sm-12 pb-1">
+            <form action="/Dashboard/UpdatePassword" method="post">
+                
+                <input hidden name="Id" value="@user.Id" />
+                <input hidden name="verifyCode" value="data" />
+                <label for="">New Password</label>
+                <input type="password" placeholder="New Password (8-16 characters)" name="NewPassword" class="form-control" required minlength="8" maxlength="16"> <br>
+                <label for="">Password Again</label>
+                <input type="password" placeholder="Password Again (8-16 characters)" name="PasswordAgain" class="form-control" required minlength="8" maxlength="16"><br>
+                <button href="" class="btn btn-success form-control">Save Password</button>
+            </form>
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 pb-1">
+            <br><br><br><br>
+            
+            <p style="color: red;">All data associated with your deleted account will be erased.</p>
+            <form action="/Dashboard/DeleteAccount" method="post">
+                <button href="" class="btn btn-danger form-control"> Delete My Account</button>
+            </form>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div>

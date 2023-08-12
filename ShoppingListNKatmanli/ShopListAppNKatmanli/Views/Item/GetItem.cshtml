@@ -1,0 +1,189 @@
+﻿@using EntityLayer.DTOs
+@using Newtonsoft.Json;
+@model GetItemDTO
+@inject IConfiguration _configuration
+
+@{
+    ViewData["Title"] = "GetItem";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-11">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Update Item</h4>
+                <form class="form" method="post" action="/Item/UpdateItems">
+                    <div class="row">
+                        @Html.HiddenFor(x=>x.Id,new{@class="form-control"})
+                        @{
+                            var id = int.Parse(Context.Request.Cookies["UserID"]);
+                        }
+                        <input hidden name="FavoriteCount" />
+                        <input hidden name="UserId" value="@id" />
+                        <div class="col-md-3 form-group">
+                            <label>Title</label>
+                            @Html.TextBoxFor(x=>x.Title,new{@class="form-control", required = "required"})
+
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label>Brand</label>
+                            @Html.TextBoxFor(x=>x.Brand,new{@class="form-control", required = "required"})
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label>Price</label>
+                            @Html.TextBoxFor(x=>x.Price,new{@class="form-control", required = "required"})
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            <label>Discount</label>
+                            @Html.TextBoxFor(x=>x.Discount,new{@class="form-control", required = "required"})
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            <label>Image</label>
+                            @Html.TextBoxFor(x=>x.Image,new{@class="form-control", required = "required"})
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            @{
+                                var httpClient = new HttpClient();
+                                var response = await httpClient.GetAsync(apiUrl + "Categories");
+                                var content = await response.Content.ReadAsStringAsync();
+                                List<GetCategoryDTO> categorylist = JsonConvert.DeserializeObject<List<GetCategoryDTO>>(content);
+                                categorylist.Sort((a, b) => string.Compare(a.Name, b.Name)); // Verileri "Name" özelliğine göre sırala
+                            }
+
+                            <label>Category</label>
+                            <select class="form-control" name="CategoryId" id="categoryDropdown" required>
+                                @foreach (var item in categorylist)
+                                {
+
+                                    <option value="@item.Id">@item.Name</option>
+
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            @{
+
+                                var response2 = await httpClient.GetAsync(apiUrl + "SubCategories/getNameById/" + Model.CategoryId);
+                                var content2 = await response2.Content.ReadAsStringAsync();
+                                var subcategory = content2;
+
+                            }
+                            <label>SubCategory</label>
+                            <select id="subcategoryDropdown" class="form-control" name="SubCategoryId" required>
+                                @*<option value="@Model.CategoryDetailId">@subcategory</option>*@
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            @{
+
+                                var response3 = await httpClient.GetAsync(apiUrl + "CategoryDetails/getNameById/" + Model.SubCategoryId);
+                                var content3 = await response3.Content.ReadAsStringAsync();
+                                var categoryDetail = content3;
+
+                            }
+                            <label>Category Detail</label>
+                            <select id="subcategoryDetailDropdown" class="form-control" name="CategoryDetailId" required>
+                                @*  <option value="@Model.CategoryDetailId">@categoryDetail</option>*@
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                            <label>Description</label>
+                            @Html.TextAreaFor(x=>x.Description,new{@class="form-control" ,@style="height:200px", required = "required"})
+                        </div>
+                        <br />
+                        <div class="col-md-3 form-group">
+                            <div class="card-footer border-secondary bg-transparent">
+                                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Update Item</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        var apiUrl = "@Html.Raw(apiUrl)";
+        jQuery(document).ready(function () {
+            var preSelectedCategoryId = @Model.CategoryId;
+            var preSelectedSubCategoryId = @Model.SubCategoryId;
+            var preSelectedCategoryDetailId = @Model.CategoryDetailId;
+
+            // Pre-select Category
+            $("#categoryDropdown").val(preSelectedCategoryId).change();
+
+            // Function to populate SubCategory dropdown
+            function populateSubCategory(selectedCategoryId) {
+                $.ajax({
+                    url: apiUrl + "SubCategories/categoryId/" + selectedCategoryId,
+                    type: "GET",
+                    success: function (response) {
+                        var subCategoryDropdown = $("#subcategoryDropdown");
+                        subCategoryDropdown.empty();
+                        subCategoryDropdown.append($('<option></option>').val('').text('Choose').prop('disabled', true).prop('selected', true).css('font-style', 'italic'));
+
+                        $.each(response, function (index, subCategory) {
+                            subCategoryDropdown.append($('<option></option>').val(subCategory.id).text(subCategory.name));
+                        });
+
+                        // Pre-select SubCategory
+                        subCategoryDropdown.val(preSelectedSubCategoryId).change();
+                    },
+                    error: function () {
+                        console.log("Ajax isteği sırasında bir hata oluştu.");
+                    }
+                });
+            }
+
+            // Function to populate Category Detail dropdown
+            function populateCategoryDetail(selectedSubCategoryId) {
+                $.ajax({
+                    url: apiUrl + "CategoryDetails/subCategoryId/" + selectedSubCategoryId,
+                    type: "GET",
+                    success: function (response) {
+                        var subcategoryDetailDropdown = $("#subcategoryDetailDropdown");
+                        subcategoryDetailDropdown.empty();
+                        subcategoryDetailDropdown.append($('<option></option>').val('').text('Choose').prop('disabled', true).prop('selected', true).css('font-style', 'italic'));
+
+                        $.each(response, function (index, subCategoryDetail) {
+                            subcategoryDetailDropdown.append($('<option></option>').val(subCategoryDetail.id).text(subCategoryDetail.name));
+                        });
+
+                        // Pre-select Category Detail
+                        subcategoryDetailDropdown.val(preSelectedCategoryDetailId);
+                    },
+                    error: function () {
+                        console.log("Ajax isteği sırasında bir hata oluştu.");
+                    }
+                });
+            }
+
+            // Initial population of SubCategory and Category Detail dropdowns
+            populateSubCategory(preSelectedCategoryId);
+            populateCategoryDetail(preSelectedSubCategoryId);
+
+            $("#categoryDropdown").change(function () {
+                var selectedCategoryId = $(this).val();
+                populateSubCategory(selectedCategoryId);
+            });
+
+            $("#subcategoryDropdown").change(function () {
+                var selectedSubCategoryId = $(this).val();
+                populateCategoryDetail(selectedSubCategoryId);
+            });
+        })
+
+
+
+    </script>

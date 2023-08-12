@@ -1,0 +1,504 @@
+﻿@using EntityLayer.Concrete;
+@using EntityLayer.DTOs;
+@using Newtonsoft.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject IConfiguration _configuration
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Shopping List</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="The Innovation Squad" name="keywords">
+    <meta content="The Innovation Squad" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fontawesome.com/icons/heart?f=classic&s=thin" rel="stylesheet" />
+    <!-- Libraries Stylesheet -->
+
+    <link href="/css/style.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5">
+            <div class="col-lg-20 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+
+                    <a class="text-dark" target="_blank" style="pointer-events:none">Developers</a>
+                    <span class="text-muted px-3">:</span>
+                    <a class="text-dark px-3" target="_blank" style="pointer-events:none">Doğa Ünal</a>
+                    <a class="text-dark px-3" href="https://www.linkedin.com/in/do%C4%9Fa-%C3%BCnal-766636263/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <span class="text-muted px-3">|</span>
+                    <a class="text-dark px-3" target="_blank" style="pointer-events:none">Ali Şiyar Arslan</a>
+                    <a class="text-dark px-3" href="https://www.linkedin.com/in/ali-%c5%9fiyar-arslan-5642641ba/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <span class="text-muted px-3">|</span>
+                    <a class="text-dark px-3" target="_blank" style="pointer-events:none">Emir Moralı</a>
+                    <a class="text-dark px-3" href="https://www.linkedin.com/in/emir-morali-267a5b242" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <span class="text-muted px-3">|</span>
+                    <a class="text-dark px-3" target="_blank" style="pointer-events:none">Hüseyin Karadana</a>
+                    <a class="text-dark px-3" href="https://www.linkedin.com/in/huseyin-karadana/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <span class="text-muted px-3">|</span>
+                    <a class="text-dark px-3" target="_blank" style="pointer-events:none">Başar Çelebi</a>
+                    <a class="text-dark px-3" href="https://www.linkedin.com/in/basarcelebi/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <span class="text-muted px-3">|</span>
+                    <a class="text-dark px-3" target="_blank" style="pointer-events:none">Batuhan Yavuz</a>
+                    <a class="text-dark px-3" href="https://www.linkedin.com/in/batuhan-yavuz1/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <span class="text-muted px-3">|</span>
+                    <a class="text-dark px-3" target="_blank" style="pointer-events:none">Oğuz Kaan Şanlı</a>
+                    <a class="text-dark px-3" href="https://www.linkedin.com/in/oguzkaansanli/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="/Home/Index" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">M</span>Shopping List</h1>
+                </a>
+            </div>
+            <div class="col-lg-6 col-6 text-left">
+                <form method="get" action="/Shop/Index/">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <button class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-6 text-right">
+                <a href="/Notification/Notification/" class="btn border">
+                    <i class="fas  fa-bell text-primary"></i>
+                    <span class="badge" id="notificationValue">0</span>
+                </a>
+
+                @{
+                    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+                    var httpClientMain = new HttpClient();
+                    var userId = Context.Request.Cookies["UserID"];
+
+                    if (!Context.User.Identity.IsAuthenticated)
+                    {
+                        <a href="/FavoriteItemUser/FavoriteItems/" class="btn border">
+                            <i class="fas fa-heart text-primary"></i>
+                            <span class="badge">0</span>
+                        </a>
+                    }
+
+                    else
+                    {
+
+                        var responseFavourite = await httpClientMain.GetAsync(apiUrl + "FavoriteItemUsers/getByUserId?userId=" + userId);
+                        var contentFavourite = await responseFavourite.Content.ReadAsStringAsync();
+
+                        List<GetFavoriteItemUserDTO> favouriteItemsList = JsonConvert.DeserializeObject<List<GetFavoriteItemUserDTO>>(contentFavourite);
+
+                        int favouriteItemCounter = 0;
+                        foreach (var item in favouriteItemsList)
+                        {
+                            var responseItem = await httpClientMain.GetAsync(apiUrl + "Items/getById?id=" + item.ItemId);
+                            var contentItem = await responseItem.Content.ReadAsStringAsync();
+                            Item itemFavItem = JsonConvert.DeserializeObject<Item>(contentItem);
+
+                            var responseUser = await httpClientMain.GetAsync(apiUrl + "Users/getUserById?id=" + itemFavItem.UserId);
+                            var contentUser = await responseUser.Content.ReadAsStringAsync();
+                            User user = JsonConvert.DeserializeObject<User>(contentUser);
+
+                            if (item.UserId == int.Parse(userId) && user.IsActive)
+                            {
+                                favouriteItemCounter++;
+                            }
+                        }
+
+                        <a href="/FavoriteItemUser/FavoriteItems/" class="btn border">
+                            <i class="fas fa-heart text-primary"></i>
+                            <span class="badge">@favouriteItemCounter</span>
+                        </a>
+                    }
+
+                    var responseMain = await httpClientMain.GetAsync(apiUrl + "Orders/getMainOrder?userId=" + userId);
+                    var contentMain = await responseMain.Content.ReadAsStringAsync();
+
+                    if (contentMain.Equals(""))
+                    {
+                        <a href="/Error/MainCartError" class="btn border">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="badge">0</span>
+                        </a>
+                    }
+
+                    else
+                    {
+                        Order order = JsonConvert.DeserializeObject<Order>(contentMain);
+                        var responseMain2 = await httpClientMain.GetAsync(apiUrl + "OrderDetails/orderId/" + order.Id);
+                        var contentMain2 = await responseMain2.Content.ReadAsStringAsync();
+                        List<GetOrderDetailDTO> orderDetailList = JsonConvert.DeserializeObject<List<GetOrderDetailDTO>>(contentMain2);
+
+                        int itemCounter = 0;
+
+                        foreach (var orderDetails in orderDetailList)
+                        {
+                            var responseOrder = await httpClientMain.GetAsync(apiUrl + "Items/getById?id=" + orderDetails.ItemId);
+                            var contentItem = await responseOrder.Content.ReadAsStringAsync();
+                            Item itemOrder = JsonConvert.DeserializeObject<Item>(contentItem);
+
+                            var responseUser = await httpClientMain.GetAsync(apiUrl + "Users/getUserById?id=" + itemOrder.UserId);
+                            var contentUser = await responseUser.Content.ReadAsStringAsync();
+                            User user = JsonConvert.DeserializeObject<User>(contentUser);
+
+                            if (user.IsActive)
+                            {
+                                itemCounter += orderDetails.Amount;
+                            }
+                        }
+
+                        <a href="/Cart/Index?shareCode=@order.ShareCode" class="btn border">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="badge">@itemCounter</span>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+                        @{
+                            var httpClient = new HttpClient();
+                            var response = await httpClient.GetAsync(apiUrl + "Categories");
+                            var content = await response.Content.ReadAsStringAsync();
+                            List<GetCategoryDTO> categorylist = JsonConvert.DeserializeObject<List<GetCategoryDTO>>(content);
+
+                            foreach (var item in categorylist)
+                            {
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link" data-toggle="dropdown">@item.Name <i class="fa fa-angle-down float-right mt-1"></i></a>
+                                    <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                        @{
+                                            var response2 = await httpClient.GetAsync(apiUrl + "SubCategories/categoryId/" + @item.Id);
+                                            var content2 = await response2.Content.ReadAsStringAsync();
+                                            List<GetSubCategoryDTO> subCategoryList = JsonConvert.DeserializeObject<List<GetSubCategoryDTO>>(content2);
+                                            foreach (var subCategory in subCategoryList)
+                                            {
+                                                <a href="/Shop/Index/?subCategory=@subCategory.Id" class="dropdown-item">@subCategory.Name</a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+
+
+                            }
+
+                        }
+
+
+
+
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="/Home/Index/" class="nav-item nav-link">Home</a>
+                            <a href="/Shop/Index/" class="nav-item nav-link">Shop</a>
+                            <a href="/Home/Contact/" class="nav-item nav-link">Contact</a>
+                        </div>
+                        @if (Context.User.Identity.IsAuthenticated)
+                        {
+                            var userid = int.Parse(Context.Request.Cookies["UserID"]);
+                            var responseUser = await httpClient.GetAsync(apiUrl + "Users/getUserById?id=" + userid);
+                            var contentUser = await responseUser.Content.ReadAsStringAsync();
+                            User user = JsonConvert.DeserializeObject<User>(contentUser);
+                            <div class="navbar-nav ml-auto py-0">
+                                <a href="/Dashboard/Index" class="nav-item nav-link">@user.Name @user.Surname</a>
+                                <a href="/Session/LogOut/" class="nav-item nav-link">Sign Out</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="navbar-nav ml-auto py-0">
+                                <a href="/Session/Login/" class="nav-item nav-link">Login</a>
+                                <a href="/Session/Register/" class="nav-item nav-link">Register</a>
+                            </div>
+                        }
+
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5">
+            <!-- Shop Sidebar Start -->
+            <div class="col-lg-3 col-md-12">
+
+                <!-- Size Start -->
+                <div class="mb-5">
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="font-weight-semi-bold mb-4">Settings</h5>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a href="/Dashboard/Index/" class="text-dark">Profile</a>
+                    </div>
+
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a href="/Dashboard/Adresses" class="text-dark">Adresses</a>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a href="/Dashboard/Reminders" class="text-dark">Reminders</a>
+
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a href="/Item/Index" class="text-dark">My Products</a>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a href="/Dashboard/Orders" class="text-dark">Baskets</a>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a href="/Dashboard/Security" class="text-dark">Security</a>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a href="/Session/LogOut/" class="text-dark">Log Out</a>
+                    </div>
+
+                </div>
+                <!-- Size End -->
+            </div>
+            <!-- Shop Sidebar End -->
+            <div class="col-lg-9 col-md-12">
+                @RenderBody()
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+            <div class="row px-xl-5 pt-5">
+                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                    <a href="" class="text-decoration-none">
+                        <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">M</span>Shopping List</h1>
+                    </a>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, Izmır, Turkey</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i><a href="mailto:shoplistmonovi@gmail.com">shoplistmonovi@gmail.com</a></p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+90 345 67890</p>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-md-4 mb-5">
+                            <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-dark mb-2" href="/Home/Index"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                <a class="text-dark mb-2" href="/Shop/Index"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                                @{
+                                    if (contentMain.Equals(""))
+                                    {
+                                        <a href="/Error/MainCartError" class="btn border">
+                                            <i class="fas fa-shopping-cart text-primary"></i>
+                                            <span class="badge">0</span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        Order order = JsonConvert.DeserializeObject<Order>(contentMain);
+                                        <a class="text-dark mb-2" href="/Cart/Index?shareCode=@order.ShareCode"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                                    }
+                                }                               
+                                <a class="text-dark mb-2" href="/Dashboard/Index"><i class="fa fa-angle-right mr-2"></i>Your Dashboard</a>
+                                <a class="text-dark" href="/Home/Contact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <h5 class="font-weight-bold text-dark mb-4 align-content-center">
+                                Share Your Dream Shopping List and Consume it Your Way!
+                            </h5>
+                            <p>
+                                Welcome to our special shopping experience! Create and share your dream shopping list. Shopping made enjoyable! <br />
+
+                                Browse and personalize shopping lists for yourself and loved ones. Share favorites, suggest gifts for special occasions. <br />
+
+                                Use our easy-to-use tool to add and manage items. Customize with photos, notes, and labels to make it uniquely yours!
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <p>
+                                <br />
+                                <br />
+                                <br />
+                                Explore others' lists, leave comments, and make shopping social.<br />
+
+                                Sign up now to shape your world and share with loved ones. Everything you desire, just for you! <br />
+
+                                Dream big and achieve with your shopping list! Happy shopping!
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Footer End -->
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary back-to-top" style="scroll-behavior: smooth;"><i class="fa fa-angle-double-up"></i></a>
+
+        @await Component.InvokeAsync("NToastNotify") @*toast*@
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="/lib/easing/easing.min.js"></script>
+        <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+        <!-- Template Javascript -->
+        <script src="/js/main.js"></script>
+        <script>
+            var apiUrl = "@Html.Raw(apiUrl)";
+            @{
+                int id = 0;
+                if (Context.User.Identity.IsAuthenticated)
+                {
+                    id = int.Parse(Context.Request.Cookies["UserID"]);
+                }
+            }
+
+                //notificationValueElement.textContent = "12";
+                //Script for timing for 2 minutes before redirecting
+                function startTimerReminder() {
+
+                    //notificationValueElement.textContent = "13";
+                    var interval = setInterval(function () {
+
+                        //notificationValueElement.textContent = "14";
+
+
+
+                        (async function () {
+                            try {
+                                var currentDate = new Date();
+                                var count = 0;
+                                var favoriteItemCount = 0;
+
+
+                                fetch(apiUrl + "Reminders/GetNowReminders?userId=" + @id)
+                                    .then(response => {
+                                        return response.json();
+                                    })
+                                    .then(data => {
+
+                                        console.log(data);
+                                        const now = new Date();
+
+                                        data.forEach(reminder => {
+                                            //console.log(reminder);
+                                            //console.log(now);
+
+
+                                            //console.log(count);
+                                            count = count + 1;
+
+                                            console.log(reminder);
+
+
+
+
+                                        });
+
+                                        var notificationValueElement = document.getElementById("notificationValue");
+                                        notificationValueElement.textContent = count.toString();
+
+                                    })
+                                    .catch(error => console.log(error))
+
+
+                                //fetch(apiUrl + "FavoriteItemUsers")//FavoriteItemUsers
+                                //    .then(response => {
+                                //        return response.json();
+                                //    })
+                                //    .then(data => {
+
+
+                                //        data.forEach(favoriteItem => {
+
+                                //            if (favoriteItem.userId == @id) {
+
+                                //                favoriteItemCount = favoriteItemCount + 1;
+
+                                //            }
+
+                                //        });
+
+                                //        var favoriteItemCountValueElement = document.getElementById("favoriteItemCountValue");
+                                //        favoriteItemCountValueElement.textContent = favoriteItemCount.toString();
+
+                                //    })
+                                //    .catch(error => console.log(error))
+
+
+                            } catch (error) {
+                                console.error('Error:', error);
+                            }
+                        })();
+                    }, 1000); // Update the timer every 1 second (1000 milliseconds)
+                }
+
+
+
+
+
+            startTimerReminder();
+        </script>
+
+</body>
+</html>

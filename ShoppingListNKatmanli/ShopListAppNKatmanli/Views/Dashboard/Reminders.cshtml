@@ -1,0 +1,54 @@
+﻿@using EntityLayer.DTOs
+
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<GetReminderDTO>
+@{
+    ViewData["Title"] = "Remainders";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Options</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <th scope="row">@item.Id</th>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.Date</td>
+                            
+                            <td>
+
+                                
+                                <a href="/Dashboard/GetReminder/@item.Id" class="btn btn-primary">Update</a>-
+                                <a href="/Dashboard/DeleteReminder/@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Reminders",new {page}))
+            <a type="button" style="background-color:#4d056e;color: #fff;" class="btn" href="/Dashboard/AddReminder">
+                New Reminder
+            </a>
+
+
+
+@await Component.InvokeAsync("NToastNotify") @*toast*@

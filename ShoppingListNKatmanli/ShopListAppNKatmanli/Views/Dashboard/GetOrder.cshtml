@@ -1,0 +1,59 @@
+﻿@using EntityLayer.DTOs
+@using Newtonsoft.Json;
+@model GetOrderDTO
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "UpdateOrder";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Update Order</h4>
+                <form class="form" method="post" action="/Dashboard/UpdateOrder">
+                    <div class="row">
+                        @{
+                            var id = int.Parse(Context.Request.Cookies["UserID"]);
+                        }
+                        @Html.HiddenFor(x=>x.Id,new{@class="form-control"})
+                        <div class="col-md-6 form-group">
+                            <label>Status</label>
+                            @Html.TextBoxFor(x=>x.Status,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Address</label>
+
+                            @{
+                                var httpClient = new HttpClient();
+                                var response = await httpClient.GetAsync(apiUrl + "Addresses/getAddressesByUserId?userId=" + @id);
+                                var content = await response.Content.ReadAsStringAsync();
+                                List<GetAddressDTO> addressList = JsonConvert.DeserializeObject<List<GetAddressDTO>>(content);
+
+                            }
+                            <select id="categoryDropdown" class="form-control" name="AddressId">
+                                @foreach (var item in addressList)
+                                {
+                                    <option value="@item.Id">@item.AddressName</option>
+                                }
+                            </select>
+                            @*@Html.TextBoxFor(x=>x.CountryName,new{@class="form-control"})*@
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="card-footer border-secondary bg-transparent">
+                                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Update Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>

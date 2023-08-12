@@ -1,0 +1,153 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ShopListAppNKatmanli
+build_property.RootNamespace = ShopListAppNKatmanli
+build_property.ProjectDir = C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\ShopListAppNKatmanli\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\siyar\Downloads\version1.0.5.2\Çalişma\ShoppingListNKatmanli\ShopListAppNKatmanli
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/AddAddresses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZEFkZHJlc3Nlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/AddOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/AddReminder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZFJlbWluZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/Adresses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkcmVzc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/GetAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEdldEFkZHJlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/GetAddressDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEdldEFkZHJlc3NEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/GetOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEdldE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/GetReminder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEdldFJlbWluZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/GetUserData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEdldFVzZXJEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXE9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/Reminders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFJlbWluZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Dashboard/Security.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFNlY3VyaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Error/Error404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Error/Error500.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I1MDAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Error/ErrorAPI.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3JBUEkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Error/ErrorAuth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3JBdXRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/FavoriteItemUser/FavoriteItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdGVJdGVtVXNlclxGYXZvcml0ZUl0ZW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Item/AddItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxBZGRJdGVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Item/GetItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxHZXRJdGVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Item/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Notification/Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uXE5vdGlmaWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Session/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Session/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Session/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Session/SendResetMail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxTZW5kUmVzZXRNYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Session/VerifyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxWZXJpZnlBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Shared/DashboardLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERhc2hib2FyZExheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Shared/Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Shop/GetItemDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxHZXRJdGVtRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/siyar/Downloads/version1.0.5.2/Çalişma/ShoppingListNKatmanli/ShopListAppNKatmanli/Views/Shop/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

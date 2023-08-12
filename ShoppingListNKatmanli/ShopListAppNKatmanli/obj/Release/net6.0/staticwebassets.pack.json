@@ -1,0 +1,265 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\moral\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\noty.js",
+      "PackagePath": "staticwebassets\\noty.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\toastr.js",
+      "PackagePath": "staticwebassets\\toastr.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\css\\error.css",
+      "PackagePath": "staticwebassets\\css\\error.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\css\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\carousel-1.jpg",
+      "PackagePath": "staticwebassets\\img\\carousel-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\carousel-2.jpg",
+      "PackagePath": "staticwebassets\\img\\carousel-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\cat-1.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\cat-2.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\cat-3.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\cat-4.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\cat-5.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\cat-6.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\check.png",
+      "PackagePath": "staticwebassets\\img\\check.png"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\offer-1.png",
+      "PackagePath": "staticwebassets\\img\\offer-1.png"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\offer-2.png",
+      "PackagePath": "staticwebassets\\img\\offer-2.png"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\payments.png",
+      "PackagePath": "staticwebassets\\img\\payments.png"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-5.jpg",
+      "PackagePath": "staticwebassets\\img\\product-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-6.jpg",
+      "PackagePath": "staticwebassets\\img\\product-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-7.jpg",
+      "PackagePath": "staticwebassets\\img\\product-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\product-8.jpg",
+      "PackagePath": "staticwebassets\\img\\product-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\user.jpg",
+      "PackagePath": "staticwebassets\\img\\user.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-1.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-2.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-3.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-4.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-5.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-6.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-7.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\img\\vendor-8.jpg",
+      "PackagePath": "staticwebassets\\img\\vendor-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Masaüstü\\Çalışma\\ShoppingListNKatmanli\\ShopListAppNKatmanli\\wwwroot\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.ShopListAppNKatmanli.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.ShopListAppNKatmanli.props",
+      "PackagePath": "build\\ShopListAppNKatmanli.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ShopListAppNKatmanli.props",
+      "PackagePath": "buildMultiTargeting\\ShopListAppNKatmanli.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.ShopListAppNKatmanli.props",
+      "PackagePath": "buildTransitive\\ShopListAppNKatmanli.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,120 @@
+﻿@using EntityLayer.DTOs
+@using System.Net.Http;
+@using Newtonsoft.Json;
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<GetItemDTO>
+@inject IConfiguration _configuration
+
+
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string apiUrl = _configuration["MyConfigurations:MyApiUrl"];
+}
+
+<br />
+<br />
+
+
+<!-- Shop Start -->
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Favorite Items</h1>
+        <div class="d-inline-flex">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-5">
+    <div class="form-control ">@Html.PagedListPager((IPagedList)Model,page=>Url.Action("FavoriteItems",new {page}))</div>
+    
+    <div class="row px-xl-5">
+        <!-- Shop Sidebar Start -->
+        <!-- Shop Sidebar End -->
+        <!-- Shop Product Start -->
+
+        
+
+        
+            <div class="row pb-3">
+
+
+                @*Item Carts Section*@
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0" style="height:400px">
+                                <a href="/Shop/GetItemDetail/@item.Id">
+                                    <img class="w-100 " src=@item.Image alt="" style="object-fit:cover">
+                                </a>
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">@item.Title</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6 class="numberWithCommas">@item.Price TL</h6> @*<h6 class="text-muted ml-2"><del>@item.Price</del></h6> // This part is for discounted price*@
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="/Shop/GetItemDetail/@item.Id" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+
+                                @{
+                                    var httpClient4 = new HttpClient();
+                                    var response4 = await httpClient4.GetAsync(apiUrl + "FavoriteItemUsers");
+
+                                int userId = int.Parse(Context.Request.Cookies["UserID"]);
+
+                                    bool IsFavorite = false;
+
+                                    if (response4.IsSuccessStatusCode)
+                                    {
+                                        var content4 = await response4.Content.ReadAsStringAsync();
+                                        List<GetFavoriteItemUserDTO> favoriteItemUserList = JsonConvert.DeserializeObject<List<GetFavoriteItemUserDTO>>(content4);
+
+                                        List<GetFavoriteItemUserDTO> favoriteItemUsersWithUserId = favoriteItemUserList.Where(
+                                        favoriteItemUser => favoriteItemUser.UserId == userId && favoriteItemUser.ItemId == item.Id).ToList();
+
+
+
+                                        if (favoriteItemUsersWithUserId.Count == 1)
+                                        {
+                                            <a href="/FavoriteItemUser/DeleteFavoriteItemUserFavoritePage?itemId=@item.Id" class="text-right"><i class="fas fa-heart text-body"></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="/FavoriteItemUser/AddFavoriteItemUser?itemId=@item.Id" class="text-right"><i class="fas fa-heart text-primary"></i></a>
+                                        }
+
+                                    }
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+             
+            </div>
+        
+        <!-- Shop Product End -->
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        function numberWithCommas(price) {
+            price = price.toString().replace(".", ',');
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        $(".numberWithCommas").each(function () {
+            var originalPrice = $(this).text();
+            var formattedPrice = numberWithCommas(originalPrice);
+            $(this).text(formattedPrice);
+        });
+    });
+</script>

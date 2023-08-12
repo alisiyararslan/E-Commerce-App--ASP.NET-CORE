@@ -1,0 +1,41 @@
+﻿@using EntityLayer.DTOs
+@model GetReminderDTO
+@{
+    ViewData["Title"] = "GetReminder";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Update Reminder</h4>
+                <form class="form" method="post" action="/Dashboard/UpdateReminder">
+                    <div class="row">
+                        @Html.HiddenFor(x=>x.Id,new{@class="form-control"})
+                        <div class="col-md-6 form-group">
+                            <label>Title</label>
+                            @Html.TextBoxFor(x=>x.Title,new{@class="form-control"})
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Date</label>
+                            @Html.TextBoxFor(x=>x.Date,new{@class="form-control" , type = "datetime-local", Value = Model.Date})
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label>Description</label>
+                            @Html.TextBoxFor(x=>x.Description,new{@class="form-control" })
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="card-footer border-secondary bg-transparent">
+                                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Update Reminder</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>

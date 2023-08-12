@@ -1,0 +1,44 @@
+﻿@using EntityLayer.DTOs
+@model DefaultReminderDTO
+@{
+    ViewData["Title"] = "AddReminder";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">New Reminder</h4>
+                <form class="form" method="post" action="/Dashboard/AddReminder">
+                    <div class="row">
+
+                        <div class="col-md-6 form-group">
+                            <label>Title</label>
+                            <input class="form-control" type="text" name="Title" required>
+                        </div>
+
+
+
+                        <div class="col-md-6 form-group">
+                            <label>Date</label>
+                            <input class="form-control" type="datetime-local" name="Date" required>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" name="Description" rows="4" required></textarea>
+
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="card-footer border-secondary bg-transparent">
+                                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Create Reminder</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
